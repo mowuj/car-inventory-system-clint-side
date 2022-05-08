@@ -1,20 +1,17 @@
-import React, { useRef } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useRef, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import './Login.css'
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import SocialLogIn from '../SocialLogIn/SocialLogIn';
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
-// import useToken from '../../../hooks/useToken';
 const Login = () => {
     const emailRef = useRef('');
-    const passwordRef = useRef('')
+    const passwordRef = useRef('');
     const navigate = useNavigate();
-    const location =useLocation()
-    let from = location.state?.from?.pathname ||"/"
+    const location = useLocation()
+    let from =location.state?.from?.pathname ||"/"
     let errorElement;
     const [
             signInWithEmailAndPassword,
@@ -22,31 +19,26 @@ const Login = () => {
             loading,
             error,
     ] = useSignInWithEmailAndPassword(auth);
-
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    // const [token] = useToken(user);
-    // if (token) {
-    //     // navigate(from,{replace:true})
-    //     navigate(from,{replace:true})
-    // }
-    if (loading || sending) {
+    if (user) {
+        navigate(from,{replace:true})
+    }
+    if (loading || googleLoading) {
     return <Loading></Loading>
     }
-    if (error) {
-        errorElement=<p className='text-danger'>Error: {error?.message}</p>
+    if (error || googleError) {
+        errorElement=<p className='text-danger'>Error: {error?.message}{googleError?.message }</p>
     
     }
-    const handleSubmit = async event => {
+    const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-
-        await signInWithEmailAndPassword(email,password)
-        
-        
+        signInWithEmailAndPassword(email,password)
     }
     const navigateRegister = (event) => {
-        navigate('/register')
+        navigate('/signup')
     }
     const resetPassword = async() => {
         const email = emailRef.current.value;
@@ -59,30 +51,26 @@ const Login = () => {
         }
     }
     return (
-        <div className='container w-50 mx-auto'>
-            
-            <h2 className='text-primary text-center mt-2'>Please Login</h2>
-        <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+        
+        <div className="login-container">
+            <div className="login-title">LOGIN</div>
+            <form className="login-form" onSubmit={handleSubmit}>
+                {errorElement}
+                <input ref={emailRef} type="email" placeholder="Your Email" />
                 
-                <Form.Control ref={emailRef} type="email" placeholder="Enter email" required/>
+                <input ref={passwordRef} type="password" placeholder="password" />
                 
-            </Form.Group>
+                <button>Login</button>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                
-                <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
-            </Form.Group>
-            
-            <Button variant="primary w-50 mx-auto d-block mb-2" type="submit">
-                Login
-            </Button>
-            </Form>
-            {errorElement}
-            <p>New To Genius Car? <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link></p>
-            <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
-            <SocialLogIn></SocialLogIn>
-            
+                {/* {error && <p className="error-message">{error}</p> } */}
+                {/* {hookError && <p className="error-message">{hookError?.message}</p>} */}
+                <ToastContainer />
+
+                <p>Don't have an account? <Link to="/signup" onClick={navigateRegister}>Sign up first</Link> </p>
+               <p>Forget Password? <a className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</a></p>
+            </form>
+
+            <button onClick={()=>signInWithGoogle()}>Google</button>
         </div>
     );
 };
