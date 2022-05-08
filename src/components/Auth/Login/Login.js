@@ -8,7 +8,7 @@ import SocialLogIn from '../SocialLogIn/SocialLogIn';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import useToken from '../../../hooks/useToken';
+// import useToken from '../../../hooks/useToken';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('')
@@ -24,11 +24,11 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    const [token] = useToken(user);
-    if (token) {
-        // navigate(from,{replace:true})
-        navigate(from,{replace:true})
-    }
+    // const [token] = useToken(user);
+    // if (token) {
+    //     // navigate(from,{replace:true})
+    //     navigate(from,{replace:true})
+    // }
     if (loading || sending) {
     return <Loading></Loading>
     }
