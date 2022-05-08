@@ -1,13 +1,13 @@
 import React from 'react';
 import './Footer.css'
-import logo3 from '../../../images/logo3.png'
+
 const Footer = () => {
     const today = new Date();
     return (
         <div className='footer-container'>
             <div className='footer'>
                 <div className='footer-text ms-md-5'>
-                    <h2> <img src={logo3} alt="" />
+                    <h2>
                         Fitness Studio</h2>
                     <p>Level-3,Ahsan Manzil,Khilkhet</p>
                     <p>Web:Ahsan@habib.com</p>
