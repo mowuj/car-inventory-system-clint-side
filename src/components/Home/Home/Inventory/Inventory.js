@@ -1,16 +1,20 @@
 import React from 'react';
-import useCars from '../../../../hooks/useCars';
+import { useNavigate } from 'react-router-dom';
+import './Inventory.css'
 
-const Inventory = () => {
-        const [cars, setcars] = useCars();  
+const Inventory = ({inventory}) => {
+    const { name, img, description, price, id } = inventory;
+    // const navigate = useNavigate();
+    // const navigateToServiceDetail = id => {
+    //     navigate(`/service/${id}`)
+    // }
     return (
-        <div id='services' className='container'>
-            <div className="row">
-                <h1 className='text-primary text-center mt-5'>Our Services</h1>
-            <div className='inventory-container'>
-                
-            </div>
-            </div>
+        <div className='inventory'>
+            <img className='' src={img} alt="" />
+            <h2>{name}</h2>
+            <p>Price:{price}</p>
+            <p><small>{ description}</small> </p>
+            {/* <button onClick={()=>navigateToServiceDetail(id)} className='btn-primary'>Book:{ name}</button> */}
         </div>
     );
 };

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 const useCars = () => {
     
-    const [cars, setcars] = useState([]);
+    const [inventories, setInventories] = useState([]);
     useEffect(() => {
         fetch('car.json')
             .then(res => res.json())
-            .then(data => setcars(data))
+            .then(data => setInventories(data))
     }, []);
-    return[cars,setcars]
+    return[inventories,setInventories]
 }
 export default useCars;
