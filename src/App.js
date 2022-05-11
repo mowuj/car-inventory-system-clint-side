@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Auth/Login/Login';
 import RequireAuth from './components/Auth/RequireAuth/RequireAuth';
+import Signup from './components/Auth/Signup/Signup';
 import About from './components/Home/About/About';
 import AddNew from './components/Home/AddNew/AddNew';
 import Footer from './components/Home/Footer/Footer';
@@ -27,6 +28,7 @@ function App() {
         </RequireAuth>}>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       
