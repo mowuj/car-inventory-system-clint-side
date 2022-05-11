@@ -1,28 +1,28 @@
 [
     {
         "id": 1,
-        "name": "Personal Trainer",
+        "name": "Personal Trainer 1",
         "img": "https://i.ibb.co/8mkktfn/personal-trainer1.jpg",
         "price": 5000,
         "description": " our personal trainers are here to help all members seeking to make the most out of their workouts"
     },
     {
-        "id": 1,
-        "name": "Personal Trainer",
+        "id": 2,
+        "name": "Personal Trainer 2",
         "img": "https://i.ibb.co/8mkktfn/personal-trainer1.jpg",
         "price": 5000,
         "description": " our personal trainers are here to help all members seeking to make the most out of their workouts"
     },
     {
-        "id": 1,
-        "name": "Personal Trainer",
+        "id": 3,
+        "name": "Personal Trainer 3",
         "img": "https://i.ibb.co/8mkktfn/personal-trainer1.jpg",
         "price": 5000,
         "description": " our personal trainers are here to help all members seeking to make the most out of their workouts"
     },
     {
-        "id": 1,
-        "name": "Personal Trainer",
+        "id": 4,
+        "name": "Personal Trainer 4",
         "img": "https://i.ibb.co/8mkktfn/personal-trainer1.jpg",
         "price": 5000,
         "description": " our personal trainers are here to help all members seeking to make the most out of their workouts"

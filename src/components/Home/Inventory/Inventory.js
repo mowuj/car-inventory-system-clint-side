@@ -10,7 +10,7 @@ const Inventory = ({inventory}) => {
     // }
     return (
         <div className='inventory'>
-            <img className='' src={img} alt="" />
+            {/* <img className='' src={img} alt="" /> */}
             <h2>{name}</h2>
             <p>Price:{price}</p>
             <p><small>{ description}</small> </p>
