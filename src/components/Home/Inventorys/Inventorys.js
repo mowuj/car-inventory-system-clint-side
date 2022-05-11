@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Inventorys.css'
 import useCars from '../../../hooks/useCars';
-import Inventory from '../Home/Inventory/Inventory';
+import Inventory from '../Inventory/Inventory'
+import Home from '../Home/Home';
+import HomeInventory from '../HomeInventory/HomeInventory'
 const Inventorys = () => {
     const [inventories, setInventories] = useCars(); 
     return (
@@ -14,6 +16,12 @@ const Inventorys = () => {
                             key={inventory.id}
                             inventory={inventory}
                         ></Inventory>)
+                }
+                    {
+                        inventories.slice(0,1).map(hInventory => <Home
+                            key={hInventory.id}
+                            hInventory={hInventory}
+                        ></Home>)
                 }
                     
             </div>
