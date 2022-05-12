@@ -11,6 +11,7 @@ import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
 import Inventory from './components/Home/Inventorys/Inventorys';
+import ManageInventory from './components/Home/ManageInventory/ManageInventory';
 import UpdateInventory from './components/Home/UpdateInventory/UpdateInventory';
 import NotFound from './components/Shared/NotFound/NotFound';
 
@@ -27,6 +28,11 @@ function App() {
         <Route path='/addnewitem' element={
           <RequireAuth>
                 <AddNew></AddNew>
+        </RequireAuth>}>
+        </Route>
+        <Route path='/manageinventory' element={
+          <RequireAuth>
+                <ManageInventory></ManageInventory>
         </RequireAuth>}>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>

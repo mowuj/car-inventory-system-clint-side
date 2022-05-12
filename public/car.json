@@ -1,36 +1,33 @@
 [
-    {
-        
-
-
-
+    {        
         "name": "Ashok Leyland 1613 TS",
         "img": "https://i.ibb.co/6PDTX1L/car4.jpg",
         "price": 2845000,
+        "quantity":2,
         "description": " Bayerische Motoren Werke in short BMW which is the most popular luxury car produce company",
         "supplier":"ACI Motors"
     },
-    {
-        
+    {       
         "name": "Ashok Leyland 1616 IL Truck",
         "img": "https://i.ibb.co/1zHMZ7X/car1.png",
         "price": 2895000,
+        "quantity": 3,
         "description": " A flagship vehicle of Toyota, the Premio is the most popular model of Toyota in the whole world and most especially in Bangladesh. This Model has a strong build quality and a superior value for money",
         "supplier": "Akij Motors"
     },
-    {
-        
+    {        
         "name": "BMW 3 Series",
         "img": "https://i.ibb.co/KrszL7r/car3.jpg",
         "price": 13400000,
+        "quantity": 5,
         "description": "The Toyota Noah Hybrid is an all-rounder car with a great interior and the cabins are spacious and very comfortable for 7 people. It is the perfect vehicle for a long and comfortable group outing",
         "supplier": "Aftab Automobiles"
     },
     {
-        
         "name": "Toyota Axio Fielder (Recondition)",
         "img": "https://i.ibb.co/xJbZ3qN/car2.jpg",
         "price": 3000000,
+        "quantity": 6,
         "description": " The Toyota Aqua is a supermini/subcompact full hybrid gasoline hatchback produced and marketed by Toyota. The Aqua is capable of going from 0- 100km/h in 10.7 seconds and is mated with the electric (CVT)",
         "supplier": "Bangladesh Auto Industries Limited"
     }

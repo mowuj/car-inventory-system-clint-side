@@ -4,26 +4,26 @@ import useCarDetail from '../../../hooks/useCarDetails';
 
 const UpdateInventory = () => {
     const { inventoryId } = useParams()
+    const [car] = useCarDetail(inventoryId)
+    const [quantity, setQuantity] = useState(0);
+    let oldQuantity;
+    const updateQuantity = id => {
+    setQuantity= oldQuantity + 1
     
-    // const [car] = useCarDetail(inventoryId)
-    // console.log(car);
-    const [inventory, setInventory] = useState({});
+    }
     
-    useEffect(() => {
-        const url = `http://localhost:5000/cars/${inventoryId}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setInventory(data))
-    }, [inventoryId]);
-
     return (
-        <div>
-            <h2>You are about to book:{inventory.id }</h2>
-            <div className='text-center'>
-                
-            </div>
+        <div className='inventory'>
+            <img className='inventory-img' src={car.img} alt="" />
+            <h2>{car.name}</h2>
+            <p>Price:{car.price}</p>
+            <p>Quantity:{car.quantity}</p>
+            <p>Quantity:{quantity}</p>
+            <p><small>{car. description}</small> </p>
+            <button onClick={()=>updateQuantity(car._id)} className='btn-primary'>Update</button>
         </div>
     );
+    
 };
 
 export default UpdateInventory;
