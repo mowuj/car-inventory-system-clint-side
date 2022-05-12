@@ -11,6 +11,7 @@ import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
 import Home from './components/Home/Home/Home';
 import Inventory from './components/Home/Inventorys/Inventorys';
+import UpdateInventory from './components/Home/UpdateInventory/UpdateInventory';
 import NotFound from './components/Shared/NotFound/NotFound';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>        
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>        
-        <Route path='/inventory/:inventoryId' element={<Inventory></Inventory>}></Route>        
+        <Route path='/inventory/:inventoryId' element={<UpdateInventory></UpdateInventory>}></Route>        
         <Route path='about' element={<About></About>}></Route> 
         <Route path='/addnewitem' element={
           <RequireAuth>

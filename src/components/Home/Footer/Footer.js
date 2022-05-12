@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
                 <div className='me-5'>
                     <input className='form-control' type="text" name="search" id="" placeholder='Search Here'/>
-                    <button className='btn btn-light my-3'>Search</button>
+                    <button className='text-align: center btn btn-info my-3'>Search</button>
                 </div>
                 <div className='footer-text ms-md-5'>
                     <p>About us</p>
