@@ -9,6 +9,7 @@ import About from './components/Home/About/About';
 import AddNew from './components/Home/AddNew/AddNew';
 import Footer from './components/Home/Footer/Footer';
 import Header from './components/Home/Header/Header';
+import Blogs from './components/Home/Home/Blogs/Blogs';
 import Home from './components/Home/Home/Home';
 import Inventory from './components/Home/Inventorys/Inventorys';
 import ManageInventory from './components/Home/ManageInventory/ManageInventory';
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>        
+        <Route path='/blog' element={<Blogs></Blogs>}></Route>        
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>        
         <Route path='/inventory/:inventoryId' element={<UpdateInventory></UpdateInventory>}></Route>        
         <Route path='about' element={<About></About>}></Route> 

@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import HomeInventory from '../HomeInventory/HomeInventory';
 import Inventory from '../Inventory/Inventory'
 import Inventorys from '../Inventorys/Inventorys';
+import Mission from '../Mission/Mission';
 // import HomeInventory from './HomeInventory/HomeInventory';
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
             </div>
             
         </div>
-            
+            <Mission></Mission>
             <Footer></Footer>
         </div>
     );
