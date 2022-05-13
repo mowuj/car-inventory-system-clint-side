@@ -1,9 +1,24 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Car Inventory Server [Live server](https://polar-wildwood-53235.herokuapp.com).
+Car Inventory live site [Live site](https://car-inventoy.web.app/).
 
-## Available Scripts
+## Project Description
+* This is a warehouse system
+* Home page show a navbar banner inventory section to other section and footer
+* manage inventory is a protected route and here you can delete items
+* add new is a Protected route here you can add a new items
+* blog has answer of 3 question
 
+## Technology use in the project
+* React Route
+* React Bootstrap
+* React Icons
+* React Toastify
+* Firebase 
+* Firebase hooks
+*heroku server
+* mongodb database
 In the project directory, you can run:
 
 ### `npm start`
