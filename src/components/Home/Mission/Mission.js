@@ -7,7 +7,7 @@ const Mission = () => {
             <div className="row"> 
                 <h2 className='text-center mx-2 my-4'>Our Mission</h2>
                 <div className="col-md-6">
-                    <img width={400} src={mission} alt="" />
+                    <img width={300} src={mission} alt="" />
                 </div>
                 <div className="col-md-6">
                     <h2>At autoRoyal, we want to provide you with the best automotive experience possible.</h2>
