@@ -8,7 +8,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed =window.confirm('Are You sure?')
         if (proceed) {
-            const url =`http://localhost:5000/cars/${id}`
+            const url =`https://polar-wildwood-53235.herokuapp.com/cars/${id}`
 
             fetch(url, {
                 method:'DELETE'

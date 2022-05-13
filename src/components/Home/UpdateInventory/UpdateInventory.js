@@ -17,7 +17,7 @@ const UpdateInventory = (id) => {
         //send data to the server
         const updateQuantity = car.quantity;
         console.log(updateQuantity);
-        const url = `http://localhost:5000/cars${inventoryId}`
+        const url = `https://polar-wildwood-53235.herokuapp.com/cars${inventoryId}`
         
         fetch(url, {
             method: 'PUT',

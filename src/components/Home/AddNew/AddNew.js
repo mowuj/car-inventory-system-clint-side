@@ -4,7 +4,7 @@ const AddNew = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/cars`;
+        const url = `https://polar-wildwood-53235.herokuapp.com/cars`;
         fetch(url, {
             method: 'POST',
             headers: {
