@@ -19,16 +19,11 @@ const ManageInventory = () => {
                 setInventories(remaining)
         }
     }
-    const handleUpdate = id => {
-        
-    }
-    const handleDeleviry = id => {
-        
-    }
+
     return (
-        <div className='container'>
+        <div className='container col-md-6'>
             <h2>Manage inventories</h2>
-            {
+{
         inventories.map(inventory => <div key={inventory._id}>
         <Table striped bordered hover size="sm">
   {/* <thead>
@@ -45,8 +40,7 @@ const ManageInventory = () => {
       <td>{ inventory.name}</td>
       <td>{ inventory.price}</td>
                         <td>{inventory.quantity}</td>
-      <td><button onClick={()=>handleUpdate(inventory._id)}>Update</button></td>
-      <td><button onClick={()=>handleDeleviry(inventory._id)}>Delevary</button></td>
+      
       <td><button onClick={()=>handleDelete(inventory._id)}>X</button></td>
       
     </tr>

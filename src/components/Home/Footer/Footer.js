@@ -8,7 +8,7 @@ const Footer = () => {
             <div className='footer'>
                 <div className='footer-text ms-md-5'>
                     <h2>
-                        Fitness Studio</h2>
+                        Car Inventory</h2>
                     <p>Level-3,Ahsan Manzil,Khilkhet</p>
                     <p>Web:Ahsan@habib.com</p>
                     <p>Contact us:01939141710</p>

@@ -6,6 +6,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import './Login.css'
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
+import axios from 'axios';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -21,7 +23,8 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    if (user) {
+    const [token] = useToken(user);
+    if (token) {
         navigate(from,{replace:true})
     }
     if (loading || googleLoading) {
@@ -31,11 +34,12 @@ const Login = () => {
         errorElement=<p className='text-danger'>Error: {error?.message}{googleError?.message }</p>
     
     }
-    const handleSubmit = event => {
+    const handleSubmit =async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email,password)
+        await signInWithEmailAndPassword(email,password)
+        
     }
     const navigateRegister = (event) => {
         navigate('/signup')

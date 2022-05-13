@@ -4,7 +4,7 @@ const AddNew = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/cars/service`;
+        const url = `http://localhost:5000/cars`;
         fetch(url, {
             method: 'POST',
             headers: {

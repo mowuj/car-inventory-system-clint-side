@@ -13,6 +13,7 @@ import Blogs from './components/Home/Home/Blogs/Blogs';
 import Home from './components/Home/Home/Home';
 import Inventory from './components/Home/Inventorys/Inventorys';
 import ManageInventory from './components/Home/ManageInventory/ManageInventory';
+import MyItems from './components/Home/MyItems/MyItems';
 import UpdateInventory from './components/Home/UpdateInventory/UpdateInventory';
 import NotFound from './components/Shared/NotFound/NotFound';
 
@@ -30,6 +31,11 @@ function App() {
         <Route path='/addnewitem' element={
           <RequireAuth>
                 <AddNew></AddNew>
+        </RequireAuth>}>
+        </Route>
+        <Route path='/myitems' element={
+          <RequireAuth>
+                <MyItems></MyItems>
         </RequireAuth>}>
         </Route>
         <Route path='/manageinventory' element={
